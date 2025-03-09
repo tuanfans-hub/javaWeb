@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript之数组的定义</title>
+    <script>
+        // 在javaScript中，数组中的元素可以是任意类型
+        // 数组的定义方式1：
+        var goods = ["手机", "电脑", "平板电脑",100];
+        console.log(goods, typeof goods);   // 输出：["手机", "电脑", "平板电脑"] object
+
+        // 数组的定义方式2：
+        var goods2 = new Array("手机", "电脑", "平板电脑",100);
+        console.log(goods2, typeof goods2);   // 输出：["手机", "电脑", "平板电脑"] object
+
+        // 数组的定义方式3：
+        var goods3 = [];
+        goods3[0] = "手机";   //相当于扩容并添加元素
+        goods3[1] = "电脑";
+        goods3[2] = "平板电脑";
+        goods3[3] = 100;
+        goods3[3] = "显示器";   //修改
+        goods3[10] = "鼠标";
+        console.log(goods3, typeof goods3);
+        console.log(goods3.length);
+        console.log(goods3[5]);
+        console.log(goods3[10]);
+
+        // 数组的定义方式4：
+        var goods4 = new Array(2);
+        goods4[0] = "手机";
+        goods4[1] = "电脑";
+        goods4[2] = "鼠标";    // 数组的索引越界，数组会自动扩容
+        console.log(goods4, typeof goods4);
+
+
+
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center">javaScript之数组的定义</h1>
+</body>
+</html>

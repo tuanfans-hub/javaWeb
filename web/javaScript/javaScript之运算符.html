@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript之运算符</title>
+    <script>
+        // 运算符基本与Java语言一致
+        // 算数运算符：+加 -减 *乘 /除 %取模 ++自增1 --自减1
+        // 赋值运算符：= += -= *= /= %=
+        // 关系运算符：==等于(值相等即可) ===全等于(值与类型都要相等) !=不等于 >大于 >=大于等于 <小于 <=小于等于
+        var n = 5;
+        console.log(n===5); //true
+        console.log(n==="5");   //false
+        console.log(n==5);  //true
+        console.log(n=="5");    //true
+        // 逻辑运算符：&&与 ||或 !非
+            //注意事项：
+            // 1.在js中，所有变量都可以作为一个boolean类型使用
+            // 2.0、""(空串)、null、undefined、NaN都为false
+        console.log('!(123*"hello")',!(123*"hello"));   //true
+            // 3.&&运算：（1）当表达式为真时，返回最后一个表达式的值；
+        console.log(1&&2&&3&&4);    //4
+        console.log(1&&2&&3&&!0);   //true
+                      //（2）当表达式为假时，返回第一个为假的表达式的值
+        console.log(1&&2&&3&&!4);   //false
+        console.log(1&&0&&3&&4);   //0
+            // 4.||运算：（1）当表达式为假时，返回最后一个表达式的值；
+                      //（2）只要有一个表达式为真，就返回第一个为真的表达式的值
+            // 5.&&和||运算符的短路特性：当这个&&和||运算有确定结果后，后面的表达式不再执行；// 可以解释&&和||运算返回值的原因
+
+        // 条件运算符：condition?true:false
+        a = 1;
+        b = -1;
+        a<b?console.log("a<b"):console.log("a>=b");
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center">javaScript之运算符</h1>
+</body>
+</html>

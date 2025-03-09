@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript常用的数据类型</title>
+    <script>
+        //特殊值：null、undefined、NaN
+        console.log(10 * "123");    //结果输出1230
+        console.log(10 * "hello");  //结果输出NaN
+
+        // javaScript数据类型：
+        // 1.数值类型：number；--------------------常用
+        var a = 1;
+        console.log(a,typeof a);
+        a = 1.5;
+        console.log(a,typeof a);
+        // 2.字符串类型：string；------------------常用
+        // 可以使用单引号、双引号
+        var b = "hello";
+        console.log(b,typeof b);
+        b = 'h';
+        console.log(b,typeof b);
+        // 3.布尔类型：boolean；-------------------常用
+        var c = true;
+        console.log(c,typeof c);
+        var d = false;
+        console.log(d,typeof d);
+        // 4.函数类型：function；------------------常用
+        // 5.undefined类型：undefined；
+        var f;
+        console.log(f,typeof f);
+        g = undefined;
+        console.log(g,typeof g);
+        // 6.对象类型：object；--------------------常用
+        Object = {
+            "name":"张三",
+            "age":18
+        }
+        console.log(Object,typeof Object);
+
+        //以下都是Object类型
+        // （1）null类型：null；
+        var e = null;
+        console.log(e,typeof e);
+
+        // （2）数组类型：array；
+        arr = [1,2,3,4,5];
+        console.log(arr,typeof arr);
+        // （3）日期类型：date；
+        // （4）正则表达式类型：regexp；
+        // （5）错误类型：error；
+        // （6）symbol类型：symbol；
+        // （7）bigint类型：bigint；
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center">javaScript常用的数据类型</h1>
+</body>
+</html>
