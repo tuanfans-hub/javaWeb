@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript之初识函数</title>
+	<script type="text/javascript">
+		//定义一个函数show()
+		function launch(){
+			alert("核弹将在3秒后发射!");
+		}
+        //给点击事件命名时不要使用click作为事件名，避免与浏览器默认的click事件冲突
+        function handleClick(){
+            alert("点击了按钮!");
+            launch();
+		}
+	</script>
+</head>
+<body>
+    <h1 style="text-align:center">javaScript之初识函数</h1>
+	<div style="text-align:center">
+		<button onclick="handleClick()">点击</button>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之函数的注意事项</title>
+	<script>
+		//  函数的注意事项：
+		// 1.JS中函数的重载会覆盖掉上一次的定义
+		function fun(){
+            console.log("fun无参函数！");
+		}
+        function fun(name){
+            console.log("fun有参函数！\n参数是："+name);
+		}
+        fun();	// 调用的是fun有参函数，参数为undefined；fun无参函数被覆盖。
+        // 2.函数的arguments隐形参数（作用域在function函数内）
+        //（1）隐形参数：在function函数中不需要定义，可以直接用来获取所有参数的变量。
+        //（2）隐形参数特别像java的可变参数一样。public void fun（int..args）
+        //（3）js中的隐形参数跟java的可变参数一样。操作类似数组
+		function fun2(){	// 相当于java的可变参数：public void fun2(int...args){}
+            console.log(arguments);
+            for(i = 0;i<arguments.length;i++){
+                console.log(arguments[i]);
+			}
+		}
+        fun2(1,"张三",3,null,5);
+        
+        // 即使在定义函数时设置了参数，也可以通过arguments来获取所有参数。
+		// 如果函数形参个数大于实参个数，那么形参依次获取实参后，剩余的形参值就是undefined。
+        function fun3(name){
+            console.log("fun3有参函数！\n参数是："+name);	// 参数是张三，按照顺去获取
+            console.log("arguments",arguments);
+		}
+        fun3("张三",1,null,5,true);
+	</script>
+</head>
+<body>
+	<h1 style="text-align:center">javaScript之函数的注意事项</h1>
+</body>
+</html>

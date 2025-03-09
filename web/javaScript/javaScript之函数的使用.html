@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之函数的使用</title>
+	<script>
+		// 定义无参函数：
+		function test1(){
+            alert("这是无参函数！");
+            console.log("这是无参函数！");
+		}
+        
+        // 定义有参函数：
+		// 参数：name；形参可以不指定类型，name的类型由实参决定。
+        function test2(name){
+            alert("这是有参函数！\n参数是："+name);
+            console.log("这是有参函数！\n参数是：",name);
+		}
+        
+        // 定义有返回值的函数：
+		// 返回值：返回值类型由函数体决定；
+        function test3(){
+            return "这是有返回值的无参函数！\n沧元图燃？";
+		}
+        function test4(name){
+            return "这是有返回值的有参函数！\n参数是："+name;
+		}
+        
+        test1();
+        test2("沧元图很燃！");
+        var text = test3();
+        alert(text);
+        console.log(text);
+        text = test4("沧元图巨燃！");
+        alert(text);
+        console.log(text);
+	</script>
+</head>
+<body>
+	<h1 style="text-align:center">javaScript之函数的使用</h1>
+</body>
+</html>

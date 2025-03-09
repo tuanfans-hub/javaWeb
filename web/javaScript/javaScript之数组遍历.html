@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript之数组遍历</title>
+    <script>
+      var goods = ["小米手机","小米耳机","小米平板","小米汽车",666,true,null,undefined];
+      console.log(goods,goods.length);
+      console.warn(goods,goods.length);
+      console.info(goods,goods.length);
+      console.error(goods,goods.length);
+      alert("goods.length="+goods.length);  //alert()方法，只能传入一个参数；
+      //遍历数组
+      for(var i = 0;i<goods.length;i++){
+          console.log("goods["+i+"]=",goods[i]);
+      }
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center">javaScript之数组遍历</h1>
+</body>
+</html>
