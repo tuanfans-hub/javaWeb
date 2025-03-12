@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之点击事件</title>
+	<style>
+		div{
+			margin:auto;
+			text-align:center;
+		}
+	</style>
+	
+	<script>
+		window.onload = function(){
+            var b = document.getElementById("btn");	// getElementById：通过标签元素id获取dom对象
+            b.onclick = function(){
+                alert("动态注册：点击事件触发!");
+            }
+		}
+	</script>
+</head>
+<body>
+	<h1 style="text-align:center">javaScript之点击事件</h1>
+	<div>
+		<button onclick="alert('静态注册：点击事件触发!')">静态注册点击事件</button>
+	</div>
+	<hr />
+	<div>
+		<button id="btn">动态注册点击事件</button>
+	</div>
+</body>
+<!-- 事件必须触发的标签元素已加载才能获取到它的dom对象 -->
+<!-- 避免无法获取标签元素的dom对象：在标签元素加载完毕时，再进行事件绑定（注册）
+ 	 方式1.把事件绑定的js代码卸载body标签之后
+ 	 方式2.把事件绑定的js代码写在window.onload事件中
+ -->
+<!--
+<script>
+    var b = document.getElementById("btn");	// getElementById：通过标签元素id获取dom对象
+    b.onclick = function(){
+        alert("动态注册：点击事件触发!");
+    }
+</script>
+-->
+</html>

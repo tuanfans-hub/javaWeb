@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之自定义对象</title>
+	<script>
+		// 自定义对象方式1：
+		// var 对象名 = new Object();  --对象实例
+		var person = new Object();
+        // 对象名.属性名 = 属性值;   --定义一个属性
+        person.name = "孟川";
+        person.age = 20;
+        // 对象名.方法名 = function(){};  --定义一个方法
+        person.print = function(){
+            console.log("name:"+this.name+"\nage:"+this.age);
+		}
+        // 调用对象的属性：对象名.属性名;
+		console.log("name=",person.name);
+        console.log("age=",person.age);
+        console.log("email=",person.email); // 调用未定义的属性，打印undefined
+		// 调用对象的方法：对象名.方法名();
+		person.print();
+        //person.say();   //调用未定义的方法，报错
+		console.log("=================================")
+		// 自定义对象方式2：
+		// var 对象名 = {属性名:属性值,属性名:属性值,方法名:function(){}};
+		var person2 = {
+            // 对象的成员之间用逗号隔开，不可省略
+            name:"七月",
+            age:18,
+			print:function(){
+                console.log("name:"+this.name+"\nage:"+this.age);
+			}
+		}
+        // 调用对象的属性：对象名.属性名;
+		console.log("name=",person2.name);
+        console.log("age=",person2.age);
+        // 调用对象的方法：对象名.方法名();
+		person2.print();
+		
+        console.log("=================================")
+		function printPerson(person,person2){
+            return person.name<person2.name?
+				console.log(person.name+"年龄小！"):console.log(person2.name+"年龄小！");
+		}
+        
+        printPerson(person,person2);
+	</script>
+</head>
+<body>
+    <h1 style="text-align:center">javaScript之自定义对象</h1>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之页面加载完毕事件</title>
+	<script type="text/javascript">
+		// 定义一个函数
+		function sayOKByStatic(){
+            alert("静态注册：页面加载完成！");
+		}
+        // 动态注册：在js中通过dom对象进行事件绑定（注册）
+		// 静态注册的优先级高于动态注册。
+		// window.onload: 当页面加载完成时，需要执行的方法放在window.onload中。
+		window.onload = function(){
+            alert("动态注册：页面加载完成！");
+		}
+	</script>
+</head>
+<!-- 静态注册：再标签中直接进行事件绑定（注册） -->
+<!-- onload="sayOK()"：当页面加载完成时，执行sayOK()函数。 -->
+<!--<body onload="sayOKByStatic()">-->
+<body>
+	<h1 style="text-align:center">javaScript之页面加载完毕事件</h1>
+</body>
+</html>
