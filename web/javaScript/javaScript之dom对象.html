@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之dom对象</title>
+	<script>
+		// OM: Document Object Model 文档对象模型
+        // 把html文档中的所有元素都封装成一个对象，这个对象就是dom对象
+        // dom:html dom、css dom、xml dom
+        // 通过document可以获取到dom对象，然后操作dom对象
+		window.onload=function(){
+            var book = document.getElementById("book");
+            console.log("div.innerText",book.innerText);	// 仅输出文本内容
+            console.log("div.innerHTML",book.innerHTML);	// 输出标签内容（包括标签内的其他标签也会输出）
+		}
+	</script>
+</head>
+<body>
+	<h1 style="text-align:center">javaScript之dom对象</h1>
+	<div id="book">
+		<div>
+			《球状闪电》-- 刘慈欣
+		</div>
+	</div>
+</body>
+</html>

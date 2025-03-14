@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之getElementsByTagName</title>
+	<style>
+		div{
+			margin:auto;
+			text-align:center;
+			width:120px;
+		}
+	</style>
+	<script>
+        // getElementsByTagName:根据标签名获取dom对象集合
+        // 可以通过dom对象修改标签属性
+
+        window.onload = function () {
+            var ps = document.getElementsByTagName("p");
+            var writer = document.getElementById("writer");
+            var work = document.getElementById("work");
+            writer.onclick = function () {
+                for (i = 0; i < ps.length; i++) {
+                    if (i < ps.length / 2) {
+                        ps[i].style.display = "none";
+                    } else {
+                        ps[i].style.display = "block";
+                    }
+                }
+                writer.style.display = "none";
+                work.style.display="block";
+            }
+            work.onclick = function(){
+                for(i=0;i<ps.length;i++){
+                    if(i<ps.length/2){
+                        ps[i].style.display="block";
+					}else{
+                        ps[i].style.display="none";
+					}
+				}
+                work.style.display = "none";
+                writer.style.display="block";
+			}
+        }
+	
+	</script>
+</head>
+<body>
+<h1 style="text-align:center">javaScript之getElementsByTagName</h1>
+<div>
+	<p style="display:block">《沧元图》</p>
+	<p style="display:block">《龙族》</p>
+	<p style="display:none">我吃西红柿</p>
+	<p style="display:none">江南</p>
+</div>
+<div>
+	<button id="writer">点击查看作者</button>
+	<button id="work" style="display:none">点击查看作品</button>
+</div>
+
+</body>
+</html>

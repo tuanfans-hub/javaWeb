@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之getElementsByName</title>
+	<script>
+		// getElementsByName:根据name属性值获取dom对象集合
+		// 思路：1.拿：拿到对应的dom对象，2.操作dom对象（属性、方法查阅文档）
+		window.onload = function(){
+            var all = document.getElementById("all");
+            var notAll = document.getElementById("notAll");
+            var others = document.getElementById("others");
+            // 获取到name为ball的checkbox复选框
+            var balls = document.getElementsByName("ball"); // balls是一个即时集合NodeList
+			
+			// 全选按钮
+            all.onclick = function(){
+            	// 遍历balls集合
+				for(i = 0;i<balls.length;i++){
+                    balls[i].checked=true;
+                    //checked属性是checkbox复选框的一个属性,默认不选中；为true表示选中，为false表示不选中。
+				}
+                console.log("全选触发！")
+			}
+			
+            // 全不选按钮
+			notAll.onclick = function(){
+                for(i=0;i<balls.length;i++){
+                    balls[i].checked=false;
+				}
+                console.log("全不选触发！");
+			}
+            
+            // 反选按钮
+			others.onclick = function(){
+                // for(i=0;i<balls.length;i++){
+                //     if(balls[i].checked){
+                //         balls[i].checked=false;
+                //     }else{
+                //         balls[i].checked=true;
+                //     }
+				// }
+				for(i=0;i<balls.length;i++){
+                    balls[i].checked = !balls[i].checked;
+				}
+                console.log("反选触发！");
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1 style="text-align:center">javaScript之getElementsByName</h1>
+	<div style="text-align:center">
+		<input type="checkbox" name="ball">足球
+		<input type="checkbox" name="ball">台球
+		<input type="checkbox" name="ball">乒乓球
+		<br/>
+		<button id="all">全选</button>
+		<button id="notAll">全不选</button>
+		<button id="others">反选</button>
+		
+	</div>
+</body>
+</html>

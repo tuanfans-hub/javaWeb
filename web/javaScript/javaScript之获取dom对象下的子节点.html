@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之获取dom对象下的子节点</title>
+	<style>
+		.clear{
+			clear:both;
+		}
+		div{
+			margin:0 auto;
+			text-align:center;
+		}
+		li{
+			list-style:none;
+			border:2px solid red;
+			width:80px;
+			height:30px;
+			text-align:center;
+			display:flex;
+			margin:5px;
+			justify-content: center;
+			align-items: center;
+			float:left;
+		}
+		#person{
+			width:500px;
+			height:100px;
+		}
+	</style>
+	
+	<script>
+		window.onload = function(){
+            var lang = document.getElementById("language");
+            var btn = document.getElementById("btn");
+            var btn1 = document.getElementById("btn1");
+            btn.onclick = function(){
+                var lis = lang.getElementsByTagName("li");
+                // 获取id=language的dom对象下的子节点li的dom对象集合
+                console.log("lis.length =",lis.length);
+				for(var i = 0;i<lis.length;i++){
+                    console.log("lis["+i+"]:",lis[i]);
+				}
+                console.log("----------------------------");
+			}
+            // 获取id=language的dom对象下的所有子节点
+            btn1.onclick = function(){
+                var nodes = lang.childNodes;
+                console.log("nodes.length =",nodes.length);
+                for(var i =0;i<nodes.length;i++){
+                    console.log("nodes["+i+"]:",nodes[i]);
+				}
+                console.log("----------------------------");
+			}
+            // 获取id=java的父节点
+			var btn2 = document.getElementById("btn2");
+			var java = document.getElementById("java");
+            btn2.onclick = function(){
+                var parent = java.parentNode;
+                console.log("parent:",parent);
+                console.log("----------------------------");
+			}
+            // 获取id=java的兄弟节点
+			var btn3 = document.getElementById("btn3");
+            btn3.onclick = function(){
+                var next_java = java.nextSibling.nextSibling;
+                var prev_java = java.previousSibling.previousSibling;
+                // 为什么要调用两次？
+				// 因为调用一次获取的节点是文本节点（#TEXT），所以要再调用一次获取下一个兄弟元素节点
+                console.log("next_java:",next_java);
+				console.log("prev_java:",prev_java);// java的前面没有其他兄弟元素节点
+                console.log("----------------------------");
+			}
+            // 设置id=person的文本域
+			var btn4 = document.getElementById("btn4");
+            var oldIndex = -1;
+            btn4.onclick = function(){
+                var person = document.getElementById("person");
+                var texts = [
+                    "大家好！我是TuanFans。很高兴认识大家！",
+					"且听我说：在座的诸位都是傻逼！",
+					"本想用普通人的身份与大家相处，换来的却是疏远。既然如此，我不装了，我摊牌了：没错！我就是亿万富翁！",
+					"太噶吼！我肆渣渣辉！"
+				];
+                while(true){
+                    var index = Math.floor(Math.random()*4);
+                    if(index !== oldIndex){
+                        person.innerText = texts[index];
+                        oldIndex = index;
+                        break;
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1 style="text-align:center">javaScript之获取dom对象下的子节点</h1>
+	<div>
+		<ul id="language">
+			<li id="java">java</li>
+			<li>C++</li>
+			<li>C</li>
+			<li>Python</li>
+			<li>Golang</li>
+		</ul>
+		<div class="clear"></div>
+		<!-- 清理剩余div空间 -->
+	</div>
+	<hr/>
+	<p>自我介绍</p>
+	<textarea id="person" name="person">自我介绍</textarea>
+	<hr/>
+	<div>
+		<button id="btn">点击获取id=language的所有li节点</button><br/>
+		<br/>
+		<button id="btn1">点击获取id=language的所有子节点</button><br/>
+		<br/>
+		<button id="btn2">点击获取id=java的父节点</button><br/>
+		<br/>
+		<button id="btn3">点击获取id=java的兄弟元素节点</button><br/>
+		<br/>
+		<button id="btn4">点击设置id=person的文本域</button><br/>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之HTML_dom</title>
+	<script>
+		/*
+		* 在HTML DOM（文档对象模型）中，每个部分都是节点：
+			1）文档本身是文档节点
+			2）所有HTML元素是元素节点
+			3）所有HTML属性是属性节点
+			4）HTML元素内的文本是文本节点
+			5）注释是注释节点
+		节点常用属性
+		1.childNodes属性，获取当前节点的所有子节点
+		2.firstChild属性，获取当前节点的第一个子节点
+		3.lastChild属性，获取当前节点的最后一个子节点
+		4.parentNode属性，获取当前节点的父节点
+		5.nextSibling属性，获取当前节点的下一个节点
+		6.previousSibling属性，获取当前节点的上一个节点
+		7.className用于获取或设置标签的class属性值
+		8.innerHTML属性，表示获取/设置起始标签和结束标签中的内容
+		9.innerText属性，表示获取/设置起始标签和结束标签中的文本
+		* */
+		window.onload = function(){
+            var btn = document.getElementById("btn");
+            var options = document.getElementsByTagName("option");
+            btn.onclick = function(){
+                for(var i = 0;i < options.length;i++){
+					alert("options["+i+"]:"+options[i].innerText+"\n");
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1 style="text-align:center">javaScript之HTML_dom</h1>
+	<div>
+		<select id="select">
+			<option>薪资</option>
+			<option>1k-5k</option>
+			<option>5k-10k</option>
+			<option>10k-30k</option>
+			<option>30k-50k</option>
+			<option>50k-100k</option>
+		</select>
+		<button id="btn">点击获取option内容</button>
+	</div>
+</body>
+</html>

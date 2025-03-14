@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>practice02</title>
+	<style>
+        #outer, div {
+            text-align: center;
+        }
+	
+	</style>
+	
+	<script>
+        window.onload = function () {
+            // 获取表单的dom对象
+            var form = document.getElementById("form");
+            // 绑定表单事件
+            form.onsubmit = function () {
+                var userLen = form.user.value.length;
+                var pwdLen = form.pwd.value.length;
+                var emailLen = form.email.value.length;
+                if (userLen < 4 || userLen > 6) {
+                    alert("用户名长度为4-6位！");
+                    return false;
+                }
+                if (pwdLen !== 6) {
+                    alert("密码长度为6位！");
+                    return false;
+                }
+                if (form.pwd.value !== form.pwd2.value) {
+                    alert("密码不一致！")
+                    return false;
+                }
+                if(emailLen===0){
+                    alert("邮箱不能为空！");
+					return false;
+				}
+                if (form.email.value.indexOf("@") >= form.email.value.indexOf(".")) {
+                    alert("邮箱格式不正确！");
+                    return false;
+                }
+                alert("注册成功！")
+            }
+        }
+	</script>
+</head>
+<body>
+<div>
+	<img src="practice02.png" alt="practice02">
+</div>
+<div id="outer">
+	<h1 style="text-align:center">注册用户</h1>
+	<form id="form" action="../onsubmit提交页面.html">
+		<input type="text" name="user" placeholder="用户名"/><br/>
+		<input type="password" name="pwd" placeholder="密码"/><br/>
+		<input type="password" name="pwd2" placeholder="确认密码"/><br/>
+		<input type="text" name="email" placeholder="邮箱"/><br/>
+		<br/>
+		<input type="submit" value="注册"/>
+	</form>
+</div>
+
+
+</body>
+</html>

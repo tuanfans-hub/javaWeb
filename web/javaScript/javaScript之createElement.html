@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之createElement</title>
+	<style>
+		div{
+            text-align:center;
+			margin:auto;
+			width: 500px;
+			height: 50px;
+   
+		}
+		#btn{
+			margin-left: 1200px;
+			margin-top: 300px;
+			display:flow;
+			position: fixed;
+		}
+	</style>
+	<script>
+		var count = 1;
+		window.onload = function(){
+            var btn = document.getElementById("btn");
+            btn.onclick = function(){
+                // 创建一个div
+                var div = document.createElement("div");
+                // 把div的内容设置为随机账号
+                div.innerText="账号"+count+"：\t"+getUser();
+                // 把div添加到body中
+                document.body.appendChild(div);
+                count++;
+			}
+		}
+        
+        // 随机生成一个账号
+        function getUser(){
+            var user = "";
+            for(var i = 0;i<10;i++){
+                user+=Math.floor(Math.random()*10);
+			}
+            return user;
+		}
+	</script>
+</head>
+<body>
+	<h1 style="text-align:center">javaScript之createElement</h1>
+	<button id="btn">点击随机生成一个账号</button>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之onChange内容变化事件</title>
+	<style>
+		div{
+			margin:auto;
+			text-align:center;
+		}
+	</style>
+	<script>
+		function changeInfo(){
+            console.log("静态注册：薪资水平发生变化!")
+		}
+        
+        // 在页面加载完毕时，再进行事件绑定（注册）
+        window.onload = function(){
+            var mySelect2 = document.getElementById("mySelect2");
+            // onChange事件：当域内容发生变化时，触发onChange事件
+            mySelect2.onchange = function(){
+                console.log("动态注册：所在城市发生变化!");
+			}
+		}
+	</script>
+</head>
+<body>
+    <h1 style="text-align:center">javaScript之onChange内容变化事件</h1>
+	<div>
+		<select id="mySelect1" onchange="changeInfo()">
+			<option>薪资水平</option>
+			<option>1k-5k</option>
+			<option>5k-10k</option>
+			<option>10k-20k</option>
+			<option>20k-50k</option>
+			<option>50k-100k</option>
+		</select>
+	</div>
+	<hr/>
+	<div>
+		<select id="mySelect2">
+			<option>所在城市</option>
+			<option>广州</option>
+			<option>长沙</option>
+			<option>福州</option>
+			<option>长春</option>
+			<option>南昌</option>
+		</select>
+	</div>
+</body>
+</html>

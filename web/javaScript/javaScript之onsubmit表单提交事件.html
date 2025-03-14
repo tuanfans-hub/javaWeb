@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript之onsubmit表单提交事件</title>
+	<style>
+        form {
+            text-align: center;
+        }
+	</style>
+	<script>
+        // 静态注册：当表单提交时，弹出提示框
+        function submitOK() {
+            // 先得到账号和密码
+            var user = document.getElementById("user");
+            var pwd = document.getElementById("pwd");
+            // 判断账号和密码是否为空
+            if (user.value === "" || pwd.value === "") {
+                alert("静态注册：账号和密码不能为空！")
+                return false;	// 阻止表单提交
+            }
+            alert("静态注册！\n登录成功!\n点击确定跳转！");
+            return true;	// 允许表单提交
+        }
+        
+        // 动态注册：当表单提交时，弹出提示框
+		window.onload = function(){
+            var form = document.getElementById("form");
+            form.onsubmit = function(){
+                if(form.user.value===""||form.password.value===""){
+                    alert("动态注册：账号和密码不能为空！");
+                    return false;	// 阻止表单提交
+				}
+                alert("动态注册！\n登录成功!\n点击确定跳转！");
+                return true;	// 允许表单提交
+			}
+		}
+	</script>
+</head>
+<body>
+<h1 style="text-align:center">javaScript之onsubmit表单提交事件</h1>
+<form action="onsubmit提交页面.html" onsubmit="return submitOK()">
+	账号：<input id="user" type="text" name="user"/><br/>
+	密码：<input id="pwd" type="password" name="password"/><br/>
+	<br/>
+	<input type="submit" value="登录"/>
+</form>
+<hr/>
+<form action="onsubmit提交页面.html" id="form">
+	<label>
+		账号：<input type="text" name="user"/><br/>
+		密码：<input type="password" name="password"/><br/>
+		<br/>
+		<input type="submit" value="登录"/>
+	</label>
+</form>
+
+</body>
+</html>

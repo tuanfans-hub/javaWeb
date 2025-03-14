@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>p3-实现一键获取账号</title>
+	<style>
+		div{
+			margin:auto;
+			text-align:center;
+		}
+	</style>
+	<script>
+        window.onload = function () {
+            var inputs = document.getElementsByTagName("input");
+            inputs.get.onclick = function () {
+                var userValue = "";
+                for(var i=0;i<10;i++){
+                    userValue += Math.floor(Math.random()*10);
+				}
+                inputs.user.value = userValue;
+            }
+            inputs.clear.onclick = function(){
+                inputs.user.value="";
+			}
+            inputs.clearAll.onclick = function(){
+                for(var i=0;i<inputs.length;i++){
+                    if(inputs[i].type!=="submit"&&inputs[i].type!=="button"){
+                        inputs[i].value = "";
+					}
+				}
+			}
+            
+            var form = document.getElementById("form");
+            form.onsubmit = function(){
+                for(var i=0;i<inputs.length;i++){
+                    if(inputs[i].value===""){
+                        alert("所有内容不能为空！");
+                        return false;
+					}
+				}
+                if(inputs.email.value.indexOf("@")>=inputs.email.value.indexOf(".")){
+                    alert("邮箱格式错误！");
+                    return false;
+				}
+                alert("登录成功！\n点击'确认'跳转页面");
+                return true;
+			}
+
+        }
+	</script>
+</head>
+<body>
+    <h1 style="text-align: center;">p3-实现一键获取账号</h1>
+    <div>
+		<form id="form" action="../onsubmit提交页面.html" method="post">
+			<input type="text" name="user" placeholder="用户名">
+			<input type="password" name="pwd" placeholder="密码">
+			<input type="text" name="email" placeholder="邮箱"><br/><hr/>
+			<input type="button" name="get" id="newUser" value="获取账号">
+			<input type="button" name="clear" id="clearUser" value="删除账号">
+			<input type="button" name="clearAll" id="clearAll" value="删除所有信息">
+			<input type="submit" value="登录">
+		</form>
+    </div>
+</body>
+</html>
